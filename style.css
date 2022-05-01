@@ -1,0 +1,46 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.page {
+    height: 100vh;
+    background-color: lightslategray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc {
+    justify-content: center;
+    width: 400px;
+    background-color: #dcd5da;
+    padding: 24px;
+}
+.calcbtns {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    margin-top: 15px;
+}
+
+.btn{
+    background-color: #bec3d4;
+
+}
+
+.number {
+    background-color: #E8E8E8;
+    text-align: right;
+    padding: 10px;
+}
+
+.zero {
+    grid-column: span 3;
+}
+
+.clear {
+    grid-column: span 3;
+}
