@@ -67,17 +67,32 @@ zero.addEventListener('click', () => {
     input.textContent = stringNum;
 });
 clear.addEventListener('click', () => {
-    input.textContent = "";
+    input.textContent = '';
     stringNum = '';
     firstNum = 0;
     secondNum = 0;
 });
 
 plus.addEventListener('click', () => {
-    operator = "plus";
+    operator = 'plus';
     firstNum = Number(stringNum);
+    stringNum = '';
+    input.textContent = '';
+});
+
+equal.addEventListener('click', () => {
+    secondNum = Number(stringNum);
+    stringNum = '';
+    if (operator == 'plus') {
+        add();
+
+    }
 })
-equal
+
+let add = function() {
+    let answer = firstNum + secondNum;
+    input.textContent = answer;
+}
 
 
 
