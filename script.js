@@ -23,14 +23,15 @@ let pressOperator = document.querySelector('.op')
 input.textContent = '';
 let firstNumber = '';
 let secondNumber = '';
-let operator = '';
+let operator = null;
+let shouldReset  =  false;
 
 one.addEventListener('click', () => {
     input.textContent += '1';
 
 });
 two.addEventListener('click', () => {
-
+    input.textContent += '2';
 });
 three.addEventListener('click', () => {
 
@@ -62,6 +63,18 @@ clear.addEventListener('click', () => {
 
 });
 
+equal.addEventListener('click', () => {
+    secondNumber = (input.textContent);
+    let answer = operate(operator, firstNumber, secondNumber);
+    input.textContent = answer;
+});
+
+plus.addEventListener('click', () => {
+    operator = 'plus';
+    firstNumber = (input.textContent);
+    input.textContent = '';
+});
+
 function add(a, b) {
     return a + b;
 }
@@ -71,7 +84,7 @@ function substract(a, b) {
 function multiply(a, b) {
     return a * b;
 }
-function divide(a, b) {
+function division(a, b) {
     return a / b;
 }
 
@@ -90,7 +103,9 @@ function operate(operator, a, b) {
             return multiply(a, b);
             break;
         case 'divide':
-            return divide(a, b);
+            return division(a, b);
+        default:
+            return null;
     } 
 }
 
