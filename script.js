@@ -18,11 +18,15 @@ let times = document.querySelector('.time');
 let divide = document.querySelector('.divide');
 let equal = document.querySelector('.equal')
 
-
+//users constructs his number by adding numbers as strings
 let stringNum = '';
+
+//user chooses operator
 let operator = '';
-let firstNum = 0;
-let secondNum = 0;
+
+//storage variables for data
+let num = 0;
+let numArray = [];
 
 one.addEventListener('click', () => {
     stringNum += '1';
@@ -69,30 +73,53 @@ zero.addEventListener('click', () => {
 clear.addEventListener('click', () => {
     input.textContent = '';
     stringNum = '';
-    firstNum = 0;
-    secondNum = 0;
+    num = 0;
+    operator = '';
+    numArray = [];
 });
 
 plus.addEventListener('click', () => {
+    //store operator value
     operator = 'plus';
-    firstNum = Number(stringNum);
+
+    //convert stringnum to NUmber
+    num = Number(stringNum);
+    //store number in an array
+
+    numArray.push(num);
+
+    //clear stringnum & textcontent so user can input their other number
     stringNum = '';
     input.textContent = '';
 });
 
 equal.addEventListener('click', () => {
-    secondNum = Number(stringNum);
+    //convert the final stringnum to a number
+    num = Number(stringNum);
+
+    //push final number to the number array
+    numArray.push(num);
+
+    //clear the stringnum
     stringNum = '';
+
+    //calculate the total of the numbers in the array depending on the operator chosen beforehand
     if (operator == 'plus') {
-        add();
+        let answer = numArray.reduce((total, num) => {
+            return total + num;
+         }, 0); //theres a 0 because for substract and add, 0 is the initial value
 
-    }
-})
+         numArray = [answer]; //the answer becomes the only value in the number array so user could do more calculation after
+         input.textContent = answer;
+         operator = '';
+    } 
+});
 
-let add = function() {
-    let answer = firstNum + secondNum;
-    input.textContent = answer;
-}
+//little bug -> after user presses equal, pressing a number before pressing the operator and then pressing equal 
+//results the same as pressing the operator because the operator is still plus and the numArray is still [answer];
+//FIND A SOLUTION
+
+
 
 
 
