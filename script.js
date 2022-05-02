@@ -18,13 +18,11 @@ let times = document.querySelector('.time');
 let divide = document.querySelector('.divide');
 let equal = document.querySelector('.equal')
 
-let pressOperator = document.querySelector('.op')
-
 input.textContent = '';
 let firstNumber = '';
 let secondNumber = '';
 let operator = null;
-let shouldReset  =  false;
+
 
 one.addEventListener('click', () => {
     if(secondNumber !== '') {
@@ -95,7 +93,6 @@ clear.addEventListener('click', () => {
     firstNumber = '';
     secondNumber = '';
     operator = null;
-    shouldReset  =  false;
 });
 
 equal.addEventListener('click', () => {
