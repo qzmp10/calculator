@@ -18,14 +18,22 @@ let times = document.querySelector('.time');
 let divide = document.querySelector('.divide');
 let equal = document.querySelector('.equal')
 
+let pressOperator = document.querySelector('.op')
+
+input.textContent = '';
+let firstNumber = '';
+let secondNumber = '';
+let operator = '';
+
 one.addEventListener('click', () => {
+    input.textContent += '1';
 
 });
 two.addEventListener('click', () => {
 
 });
 three.addEventListener('click', () => {
- 
+
 });
 
 four.addEventListener('click', () => {
@@ -67,6 +75,24 @@ function divide(a, b) {
     return a / b;
 }
 
+function operate(operator, a, b) {
+    a = Number(a);
+    b = Number(b);
+
+    switch(operator) {
+        case 'plus':
+            return add(a, b);
+            break;
+        case 'minus':
+            return susbtract(a, b);
+            break;
+        case 'times':
+            return multiply(a, b);
+            break;
+        case 'divide':
+            return divide(a, b);
+    } 
+}
 
 
 
