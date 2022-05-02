@@ -85,7 +85,6 @@ plus.addEventListener('click', () => {
     //convert stringnum to NUmber
     num = Number(stringNum);
     //store number in an array
-
     numArray.push(num);
 
     //clear stringnum & textcontent so user can input their other number
@@ -118,6 +117,8 @@ equal.addEventListener('click', () => {
 //little bug -> after user presses equal, pressing a number before pressing the operator and then pressing equal 
 //results the same as pressing the operator because the operator is still plus and the numArray is still [answer];
 //FIND A SOLUTION
+
+//DO AN OPERATE() FUNCTION TOO TO CLEAN UP CODE
 
 
 
