@@ -34,47 +34,53 @@ two.addEventListener('click', () => {
     input.textContent += '2';
 });
 three.addEventListener('click', () => {
-
+    input.textContent += '3';
 });
 
 four.addEventListener('click', () => {
-
+    input.textContent += '4';
 });
 five.addEventListener('click', () => {
-
+    input.textContent += '5';
 });
 six.addEventListener('click', () => {
-
+    input.textContent += '6';
 });
 seven.addEventListener('click', () => {
-
+    input.textContent += '7';
 });
 
 eight.addEventListener('click', () => {
- 
+    input.textContent += '8';
 });
 nine.addEventListener('click', () => {
-
+    input.textContent += '9';
 });
 zero.addEventListener('click', () => {
-
+    input.textContent += '0';
 });
 clear.addEventListener('click', () => {
-
+    input.textContent = '';
+    firstNumber = '';
+    secondNumber = '';
+    operator = null;
+    shouldReset  =  false;
 });
 
 equal.addEventListener('click', () => {
-    secondNumber = (input.textContent);
-    let answer = operate(operator, firstNumber, secondNumber);
+    secondNumber = (input.textContent); // second number stored after user presses equal
+    let answer = operate(operator, firstNumber, secondNumber); // takes the operator pressed before with the two numbers and does the calculations
     input.textContent = answer;
 });
 
 plus.addEventListener('click', () => {
-    operator = 'plus';
-    firstNumber = (input.textContent);
-    input.textContent = '';
+    operator = 'plus'; // operator defined
+    firstNumber = (input.textContent); // first number stored after user presses operator 
+    input.textContent = ''; 
 });
 
+// adding these functions was key, in this case we can set firstNumber & secondNumber as a & b 
+// which i didnt realize before coding my first attempt at this calculator
 function add(a, b) {
     return a + b;
 }
