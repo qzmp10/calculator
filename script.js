@@ -27,36 +27,67 @@ let operator = null;
 let shouldReset  =  false;
 
 one.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    } // this makes it so that if there is a secondNumber (usually after user presses equal) 
+    //the textContent will clear and give place to a new calculation (what happens w/ real calculator)
     input.textContent += '1';
 
 });
 two.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '2';
 });
 three.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '3';
 });
 
 four.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '4';
 });
 five.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '5';
 });
 six.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '6';
 });
 seven.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '7';
 });
 
 eight.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '8';
 });
 nine.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '9';
 });
 zero.addEventListener('click', () => {
+    if(secondNumber !== '') {
+        input.textContent = '';
+    }
     input.textContent += '0';
 });
 clear.addEventListener('click', () => {
@@ -71,6 +102,7 @@ equal.addEventListener('click', () => {
     secondNumber = (input.textContent); // second number stored after user presses equal
     let answer = operate(operator, firstNumber, secondNumber); // takes the operator pressed before with the two numbers and does the calculations
     input.textContent = answer;
+    firstNumber = ''; //this makes it so that the firstNumber is deleted after the operation, so if user presses equal again, only secondNumber is processed
 });
 
 plus.addEventListener('click', () => {
