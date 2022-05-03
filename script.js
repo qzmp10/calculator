@@ -102,6 +102,7 @@ clear.addEventListener('click', () => {
     firstNumber = '';
     secondNumber = '';
     operator = null;
+    numArray = [];
 });
 
 equal.addEventListener('click', () => {
@@ -109,29 +110,34 @@ equal.addEventListener('click', () => {
     let answer = operate(operator, firstNumber, secondNumber); // takes the operator pressed before with the two numbers and does the calculations
     input.textContent = answer;
     firstNumber = ''; //this makes it so that the firstNumber is deleted after the operation, so if user presses equal again, only secondNumber is processed
+    numArray = [];
 });
 
 plus.addEventListener('click', () => {
     operator = 'plus'; // operator defined
     firstNumber = (input.textContent); // first number stored after user presses operator 
+    arrayMagic();
     input.textContent = ''; 
 });
 
 minus.addEventListener('click', () => {
     operator = 'minus'; 
     firstNumber = (input.textContent); 
+    arrayMagic();
     input.textContent = ''; 
 });
 
 divide.addEventListener('click', () => {
     operator = 'divide'; 
     firstNumber = (input.textContent); 
+    arrayMagic();
     input.textContent = ''; 
 });
 
 times.addEventListener('click', () => {
     operator = 'times'; 
     firstNumber = (input.textContent); 
+    arrayMagic();
     input.textContent = ''; 
 });
 
@@ -170,6 +176,24 @@ function operate(operator, a, b) {
             return null;
     } 
 }
+
+function arrayMagic() { // this is so we can do operations on more than a pair of number at a time :)
+    numArray.push(firstNumber);
+    if (numArray.length  == 2) {
+        let numberOne = Number(numArray[0]);
+        let numberTwo = Number(numArray[1]);
+        if (operator == 'plus') {
+            numArray = [add(numberOne, numberTwo)];
+        } else if (operator == 'minus') {
+            numArray = [substract(numberOne, numberTwo)];
+        } else if (operator == 'times') {
+            numArray = [multiply(numberOne, numberTwo)]; 
+        } else if (operator == 'divide') {
+            numArray = [division(numberOne, numberTwo)];
+        } firstNumber = Number(numArray);
+    }
+}
+     
 
 
 
