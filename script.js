@@ -32,7 +32,7 @@ one.addEventListener('click', () => {
         input.textContent = ''; //reset textContent
     }
     input.textContent += '1';
-    pressedEqual = false; // user presses button, so pressedEqual = false;
+    pressedEqual = false; // user presses button, so pressedEqual == false;
 });
 
 two.addEventListener('click', () => {
@@ -191,21 +191,27 @@ function operate(operator, a, b) {
 
 function arrayMagic() { // this is so we can do operations one pair of numbers at a time
     numArray.push(firstNumber); // pushes first number
+    
     if (numArray.length == 2) { // if numArray length is more than 2, operate numbers in numArray & change firstNumber to operated numArray
         let numberOne = Number(numArray[0]);
         let numberTwo = Number(numArray[1]);
+
         if (operator == 'plus') {
             numArray = [add(numberOne, numberTwo)];
             firstNumber = Number(numArray);
+
         } else if (operator == 'minus') {
             numArray = [substract(numberOne, numberTwo)];
             firstNumber = Number(numArray);
+
         } else if (operator == 'times') {
             numArray = [multiply(numberOne, numberTwo)]; 
             firstNumber = Number(numArray);
+
         } else if (operator == 'divide') {
             numArray = [division(numberOne, numberTwo)];
             firstNumber = Number(numArray);
+
         } else {
             return; // if array length !== 2, move on to next operator
         }
