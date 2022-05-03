@@ -184,6 +184,7 @@ function operate(operator, a, b) {
             break;
         case 'divide':
             return division(a, b);
+            break;
         default:
             return null;
     } 
@@ -238,6 +239,7 @@ let preventEqualSpam = function() {
 // so pressing equal after those operations is gonna = the previous answer
 // if user pressed minus before spamming equal, we wanna switch firstNumber and secondNumber as 0 - secondNumber is = -secondNumber
 // not needed for add as 0 + secondNumber = secondNumber
+
 
      
 
