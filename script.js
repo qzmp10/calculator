@@ -14,7 +14,7 @@ let zero = document.querySelector('.zero');
 let clear = document.querySelector('.clear');
 let plus = document.querySelector('.plus');
 let minus = document.querySelector('.minus');
-let times = document.querySelector('.time');
+let times = document.querySelector('.times');
 let divide = document.querySelector('.divide');
 let equal = document.querySelector('.equal')
 
@@ -22,72 +22,81 @@ input.textContent = '';
 let firstNumber = '';
 let secondNumber = '';
 let operator = null;
+let numArray = [];
 
 
 one.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    } // this makes it so that if there is a secondNumber (usually after user presses equal) 
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // } // this makes it so that if there is a secondNumber (usually after user presses equal) 
     //the textContent will clear and give place to a new calculation (what happens w/ real calculator)
-    input.textContent += '1';
 
+    input.textContent += '1';
 });
+
 two.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '2';
 });
+
 three.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '3';
 });
 
 four.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '4';
 });
+
 five.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '5';
 });
+
 six.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '6';
 });
+
 seven.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '7';
 });
 
 eight.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '8';
 });
+
 nine.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '9';
 });
+
 zero.addEventListener('click', () => {
-    if(secondNumber !== '') {
-        input.textContent = '';
-    }
+    // if(secondNumber !== '') {
+    //     input.textContent = '';
+    // }
     input.textContent += '0';
 });
+
 clear.addEventListener('click', () => {
     input.textContent = '';
     firstNumber = '';
@@ -105,6 +114,24 @@ equal.addEventListener('click', () => {
 plus.addEventListener('click', () => {
     operator = 'plus'; // operator defined
     firstNumber = (input.textContent); // first number stored after user presses operator 
+    input.textContent = ''; 
+});
+
+minus.addEventListener('click', () => {
+    operator = 'minus'; 
+    firstNumber = (input.textContent); 
+    input.textContent = ''; 
+});
+
+divide.addEventListener('click', () => {
+    operator = 'divide'; 
+    firstNumber = (input.textContent); 
+    input.textContent = ''; 
+});
+
+times.addEventListener('click', () => {
+    operator = 'times'; 
+    firstNumber = (input.textContent); 
     input.textContent = ''; 
 });
 
@@ -132,7 +159,7 @@ function operate(operator, a, b) {
             return add(a, b);
             break;
         case 'minus':
-            return susbtract(a, b);
+            return substract(a, b);
             break;
         case 'times':
             return multiply(a, b);
