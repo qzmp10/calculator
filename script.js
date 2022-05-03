@@ -18,6 +18,7 @@ let times = document.querySelector('.times');
 let divide = document.querySelector('.divide');
 let equal = document.querySelector('.equal')
 
+
 //variables
 input.textContent = '';
 let firstNumber = '';
