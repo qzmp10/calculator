@@ -116,16 +116,6 @@ clear.addEventListener('click', () => {
     pressedEqual = false;
 });
 
-equal.addEventListener('click', () => {
-    pressedEqual = true;
-    secondNumber = (input.textContent); 
-    preventEqualSpam();
-    let answer = operate(operator, firstNumber, secondNumber); 
-    input.textContent = answer;
-    firstNumber = '';
-    numArray = [];
-});
-
 plus.addEventListener('click', () => {
     firstNumber = (input.textContent); //sets firstNumber
     arrayMagic(); //IF array.length !== 2 -> skips this step, goes to next operator -> ('plus')
@@ -153,6 +143,16 @@ times.addEventListener('click', () => {
     arrayMagic();
     operator = 'times'; 
     input.textContent = ''; 
+});
+
+equal.addEventListener('click', () => {
+    pressedEqual = true;
+    secondNumber = (input.textContent); 
+    preventEqualSpam();
+    let answer = operate(operator, firstNumber, secondNumber); 
+    input.textContent = answer;
+    firstNumber = '';
+    numArray = [];
 });
 
 function add(a, b) {
