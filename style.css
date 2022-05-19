@@ -4,7 +4,7 @@ body, html {
     border: 0;
 }
 .page {
-    height: 100vh;
+    height: 100%;
     background-color: lightslategray;
     display: flex;
     flex-direction: column;
