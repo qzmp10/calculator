@@ -22,6 +22,7 @@ p {
     padding: 24px;
     border: solid black;
     border-radius: 2px;
+    transform: scale(0.9);
 }
 .calcbtns {
     display: grid;
